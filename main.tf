@@ -15,7 +15,7 @@ data "archive_file" "lambda" {
 resource "aws_s3_bucket_object" "file_upload" {
   bucket = "u15-testbucket"
   key    = "lambda.zip"
-  source = "${data.archive_file.source.output_path}" 
+  source = "${data.archive_file.lambda.output_path}" 
 }
 
 data "aws_iam_policy_document" "AWSLambdaTrustPolicy" {
