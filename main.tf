@@ -9,12 +9,12 @@ provider "archive" {}
 data "archive_file" "lambda" {
   type        = "zip"
   source_dir  = "lambda"
-  output_path = "lambda.zip"
+  output_path = "u15-lambda.zip"
 }
 
 resource "aws_s3_bucket_object" "file_upload" {
   bucket = "u15-testbucket"
-  key    = "lambda.zip"
+  key    = "u15-lambda.zip"
   source = "${data.archive_file.lambda.output_path}" 
 }
 
