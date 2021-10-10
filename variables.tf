@@ -5,7 +5,7 @@ variable "project" {
 
 variable "region" {
   type        = string
-  description = "Azure region"
+  description = "US-East/N.Virginia region"
   default     = "us-east-1"
 }
 	
